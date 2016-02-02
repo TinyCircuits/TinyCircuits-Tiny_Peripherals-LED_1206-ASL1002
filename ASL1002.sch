@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.2">
+<eagle version="6.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -79,11 +79,26 @@
 <layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="108" name="fp8" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="109" name="fp9" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="201" name="201bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="202" name="202bmp" color="7" fill="1" visible="yes" active="yes"/>
@@ -109,6 +124,8 @@
 <layer number="222" name="222bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="223" name="223bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="224" name="224bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="251" name="SMDround" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
@@ -244,6 +261,34 @@
 <vertex x="0.8255" y="1.7018"/>
 <vertex x="0.8255" y="-1.7018" curve="-90"/>
 <vertex x="-0.8255" y="0" curve="-90"/>
+</polygon>
+</package>
+<package name="SEWTAP_TH_10MM">
+<wire x1="0" y1="0" x2="0.922" y2="0" width="0.01" layer="49"/>
+<pad name="1" x="-0.127" y="0" drill="1.2" diameter="1.8034"/>
+<polygon width="0.2032" layer="1">
+<vertex x="-0.8" y="1.5"/>
+<vertex x="0.37" y="0.6216"/>
+<vertex x="0.38" y="-0.6216"/>
+<vertex x="-0.8" y="-1.5" curve="-35"/>
+</polygon>
+<polygon width="0.2032" layer="16">
+<vertex x="-0.8" y="1.5"/>
+<vertex x="0.37" y="0.6216"/>
+<vertex x="0.38" y="-0.6216"/>
+<vertex x="-0.8" y="-1.5" curve="-35"/>
+</polygon>
+<polygon width="0.2032" layer="30">
+<vertex x="-0.8" y="1.5"/>
+<vertex x="0.37" y="0.6216"/>
+<vertex x="0.38" y="-0.6216"/>
+<vertex x="-0.8" y="-1.5" curve="-35"/>
+</polygon>
+<polygon width="0.2032" layer="29">
+<vertex x="-0.8" y="1.5"/>
+<vertex x="0.37" y="0.6216"/>
+<vertex x="0.38" y="-0.6216"/>
+<vertex x="-0.8" y="-1.5" curve="-35"/>
 </polygon>
 </package>
 </packages>
@@ -10423,6 +10468,14 @@
 <technology name=""/>
 </technologies>
 </device>
+<device name="TH_10MM" package="SEWTAP_TH_10MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="FRAME_TINYCIRCUITS_B_L" prefix="FRAME" uservalue="yes">
@@ -10511,7 +10564,7 @@
 <plain>
 <text x="340.868" y="17.272" size="3.556" layer="94" font="vector">TinyLily LED - 1206</text>
 <text x="327.152" y="6.35" size="3.556" layer="94" font="vector">AS-SCH-ASL1002</text>
-<text x="416.56" y="6.858" size="3.556" layer="94" font="vector">1</text>
+<text x="416.56" y="6.858" size="3.556" layer="94" font="vector">2</text>
 <text x="45.72" y="35.56" size="3.048" layer="91">Released under the Creative Commons Attribution Share-Alike 3.0 License</text>
 <text x="45.72" y="30.48" size="3.048" layer="91">http://creativecommons.org/licenses/by-sa/3.0</text>
 <text x="45.72" y="20.32" size="3.048" layer="91">Original Arduino Uno Design by Team Arduino</text>

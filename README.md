@@ -1,7 +1,7 @@
 # TinyCircuits Tiny Peripheral 1206 LED
-# ASL1002 Rev1
+# ASL1002 Rev2
 
-These are the design files for the TinyCircuits ASL1002 Rev 1 PCB.  This is a Tiny peripheral board that has an 1206 LED and resistor, along with pads to solder to.
+These are the design files for the TinyCircuits ASL1002 Rev 2 PCB.  This is a Tiny peripheral board that has an 1206 LED and resistor, along with pads to solder to.
 
 Format is in Cadsoft Eagle format - Eagle version 6.2 was used for the original design.
 
