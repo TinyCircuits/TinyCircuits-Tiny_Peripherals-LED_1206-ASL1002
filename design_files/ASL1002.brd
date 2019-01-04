@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -63,6 +63,13 @@
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="56" name="wert" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="58" name="bCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="Invisible" color="7" fill="1" visible="no" active="no"/>
+<layer number="61" name="stand" color="7" fill="1" visible="no" active="no"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="no"/>
@@ -71,6 +78,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="no" active="no"/>
 <layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
+<layer number="99" name="SpiceOrder" color="5" fill="1" visible="no" active="no"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="101" name="Patch_Top" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
@@ -84,6 +92,9 @@
 <layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="111" name="tGTest" color="4" fill="1" visible="no" active="no"/>
 <layer number="112" name="bGTest" color="1" fill="1" visible="no" active="no"/>
+<layer number="113" name="HENWAY_PKG" color="12" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="50_Electronics_Plate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="henwayRES" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="drillImage" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="117" name="mPads" color="7" fill="1" visible="no" active="no"/>
 <layer number="118" name="mVias" color="7" fill="1" visible="no" active="no"/>
@@ -121,6 +132,13 @@
 <layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="152" name="mbDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="153" name="FabDoc1" color="6" fill="1" visible="no" active="no"/>
+<layer number="154" name="FabDoc2" color="2" fill="1" visible="no" active="no"/>
+<layer number="155" name="FabDoc3" color="7" fill="15" visible="no" active="no"/>
+<layer number="156" name="bCapacitor" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="157" name="tResistor" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="158" name="bResistor" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="159" name="henwayCAP" color="13" fill="1" visible="yes" active="yes"/>
 <layer number="191" name="mNets" color="7" fill="1" visible="no" active="no"/>
 <layer number="192" name="mBusses" color="7" fill="1" visible="no" active="no"/>
 <layer number="193" name="mPins" color="7" fill="1" visible="no" active="no"/>
@@ -153,6 +171,9 @@
 <layer number="222" name="222bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="223" name="223bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="224" name="224bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="7" fill="1" visible="yes" active="yes"/>
@@ -181,32 +202,25 @@
 <wire x1="69.85" y1="0" x2="69.85" y2="50.8" width="0.127" layer="48"/>
 <wire x1="69.85" y1="50.8" x2="0" y2="50.8" width="0.127" layer="48"/>
 <wire x1="0" y1="50.8" x2="0" y2="0" width="0.127" layer="48"/>
-<dimension x1="25.1" y1="20" x2="14.9" y2="20" x3="20" y3="24.524653125" layer="48"/>
+<dimension x1="25.1" y1="22" x2="14.9" y2="22" x3="20" y3="26.524653125" layer="48"/>
 <text x="48.111025" y="4.365003125" size="0.889" layer="48">TinyLily LED - 1206</text>
 <text x="44.986825" y="1.7714" size="0.889" layer="48">AS-PCB-ASL1002</text>
 <text x="67.3810375" y="1.6952" size="0.889" layer="48">2</text>
 <text x="16.718715625" y="19.35918125" size="1.5" layer="22" rot="MR90">-</text>
 <text x="22.6168625" y="19.145540625" size="1.5" layer="22" rot="MR0">+</text>
-<dimension x1="17" y1="22" x2="17" y2="18" x3="8.83319375" y3="20" layer="48"/>
+<dimension x1="14.9" y1="22" x2="14.9" y2="18" x3="6.73319375" y3="20" layer="48"/>
 <text x="40.4876" y="15.040596875" size="0.4572" layer="48" ratio="10">Released under the Creative Commons Attribution Share-Alike 3.0 License</text>
 <text x="40.4876" y="14.278596875" size="0.4572" layer="48" ratio="10">http://creativecommons.org/licenses/by-sa/3.0</text>
 <text x="40.4876" y="13.008596875" size="0.4572" layer="48" ratio="10">Original Arduino Uno Design by Team Arduino</text>
 <text x="40.513" y="11.687796875" size="0.4572" layer="48" ratio="10">TinyDuino, TinyLily and TinyShield Designs by TinyCircuits</text>
-<wire x1="16.9" y1="17.25" x2="16.9" y2="22.75" width="1.5" layer="46" curve="-180"/>
 <wire x1="23.1" y1="18" x2="23.1" y2="22" width="0.0254" layer="20" curve="180"/>
 <wire x1="16.9" y1="22" x2="16.9" y2="18" width="0.0254" layer="20" curve="180"/>
 <wire x1="23.1" y1="22" x2="16.9" y2="22" width="0.0254" layer="20"/>
 <wire x1="16.9" y1="18" x2="23.1" y2="18" width="0.0254" layer="20"/>
-<wire x1="23.1" y1="18" x2="23.1" y2="22" width="0.0254" layer="108" curve="180"/>
 <wire x1="16.9" y1="22" x2="16.9" y2="18" width="0.0254" layer="20" curve="180"/>
-<wire x1="23.1" y1="22" x2="16.9" y2="22" width="0.0254" layer="108"/>
 <text x="40.513" y="12.373596875" size="0.4572" layer="48" ratio="10">LilyPad Arduino Design by Leah Buechley and Sparkfun Electronics</text>
-<wire x1="23.1" y1="22.75" x2="23.1" y2="17.25" width="1.5" layer="46" curve="-180"/>
-<wire x1="14.9" y1="18" x2="16.9" y2="18" width="0.0254" layer="20"/>
-<wire x1="23.1" y1="18" x2="25.1" y2="18" width="0.0254" layer="20"/>
-<wire x1="25.1" y1="22" x2="14.9" y2="22" width="0.0254" layer="20"/>
-<text x="20" y="21.4" size="0.5" layer="20" align="bottom-center">^ V-SCORE ^</text>
-<text x="20" y="18.6" size="0.5" layer="20" rot="SR180" align="bottom-center">^ V-SCORE ^</text>
+<wire x1="14" y1="21" x2="14" y2="19" width="0.0254" layer="20"/>
+<wire x1="26" y1="21" x2="26" y2="19" width="0.0254" layer="20"/>
 </plain>
 <libraries>
 <library name="tinycircuits">
@@ -261,7 +275,7 @@
 <text x="0.55118125" y="5.012690625" size="0.635" layer="48">TITLE:</text>
 <text x="18.25498125" y="0.415290625" size="0.635" layer="48">Sheet:</text>
 <text x="22.31898125" y="2.879090625" size="0.635" layer="48">REV:</text>
-<text x="9.79678125" y="7.001003125" size="0.635" layer="48">http://www.Tiny-Circuits.com</text>
+<text x="9.79678125" y="7.001003125" size="0.635" layer="48">http://www.TinyCircuits.com</text>
 <rectangle x1="1.2214875" y1="6.306059375" x2="1.28091875" y2="6.307584375" layer="48"/>
 <rectangle x1="1.2214875" y1="6.307584375" x2="1.28091875" y2="6.309103125" layer="48"/>
 <rectangle x1="1.2214875" y1="6.30910625" x2="1.28091875" y2="6.31063125" layer="48"/>
@@ -10323,22 +10337,22 @@
 <text x="21.60778125" y="0.415290625" size="0.635" layer="48">1/1</text>
 </package>
 <package name="1206_LED">
-<wire x1="-2.958" y1="0.9804" x2="2.9507" y2="0.9804" width="0.127" layer="51"/>
-<wire x1="2.9507" y1="0.9804" x2="2.9507" y2="-0.9832" width="0.127" layer="51"/>
-<wire x1="2.9507" y1="-0.9832" x2="-2.958" y2="-0.9832" width="0.127" layer="51"/>
-<wire x1="-2.958" y1="-0.9832" x2="-2.958" y2="0.9804" width="0.127" layer="51"/>
+<wire x1="-1.6" y1="0.8" x2="1.6" y2="0.8" width="0.127" layer="51"/>
+<wire x1="1.6" y1="0.8" x2="1.6" y2="-0.8" width="0.127" layer="51"/>
+<wire x1="1.6" y1="-0.8" x2="-1.6" y2="-0.8" width="0.127" layer="51"/>
+<wire x1="-1.6" y1="-0.8" x2="-1.6" y2="0.8" width="0.127" layer="51"/>
 <smd name="1" x="-1.875" y="0" dx="1.75" dy="1.5" layer="1"/>
 <smd name="2" x="1.875" y="0" dx="1.75" dy="1.5" layer="1"/>
-<text x="0" y="0" size="0.3048" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="0.8" layer="25" align="center">&gt;NAME</text>
 </package>
 <package name="R0805">
-<wire x1="-1.898" y1="0.8504" x2="1.8907" y2="0.8504" width="0.127" layer="51"/>
-<wire x1="1.8907" y1="0.8504" x2="1.8907" y2="-0.8432" width="0.127" layer="51"/>
-<wire x1="1.8907" y1="-0.8432" x2="-1.898" y2="-0.8432" width="0.127" layer="51"/>
-<wire x1="-1.898" y1="-0.8432" x2="-1.898" y2="0.8504" width="0.127" layer="51"/>
-<smd name="1" x="-1.175" y="0" dx="1.05" dy="1.3" layer="1"/>
-<smd name="2" x="1.175" y="0" dx="1.05" dy="1.3" layer="1"/>
-<text x="0" y="0" size="0.3048" layer="25" align="center">&gt;NAME</text>
+<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.127" layer="51"/>
+<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.127" layer="51"/>
+<wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.127" layer="51"/>
+<smd name="1" x="-1" y="0" dx="1" dy="1.25" layer="1"/>
+<smd name="2" x="1" y="0" dx="1" dy="1.25" layer="1"/>
+<text x="0" y="0" size="0.8" layer="25" align="center">&gt;NAME</text>
 </package>
 </packages>
 </library>
@@ -10558,7 +10572,7 @@ design rules under a new name.</description>
 <signal name="N$2">
 <contactref element="D1" pad="2"/>
 <contactref element="R1" pad="1"/>
-<wire x1="21.175" y1="18.9858" x2="21.125" y2="19.1858" width="0.254" layer="1"/>
+<wire x1="21" y1="18.9858" x2="21.125" y2="19.1858" width="0.254" layer="1"/>
 <wire x1="21.125" y1="19.1858" x2="20.7" y2="19.2" width="0.254" layer="1"/>
 <wire x1="20.7" y1="19.2" x2="19.115" y2="20.785" width="0.254" layer="1"/>
 <wire x1="19.115" y1="20.785" x2="18.125" y2="20.785" width="0.254" layer="1"/>
@@ -10572,7 +10586,7 @@ design rules under a new name.</description>
 <signal name="-">
 <contactref element="U$1" pad="1"/>
 <contactref element="R1" pad="2"/>
-<wire x1="18.825" y1="18.9858" x2="17.3142" y2="18.9858" width="0.254" layer="1"/>
+<wire x1="19" y1="18.9858" x2="17.3142" y2="18.9858" width="0.254" layer="1"/>
 <wire x1="17.3142" y1="18.9858" x2="16.5" y2="19.9" width="0.254" layer="1"/>
 <wire x1="16.5" y1="19.9" x2="16.1" y2="19.9" width="0.254" layer="1"/>
 <wire x1="16.1" y1="19.9" x2="16" y2="20" width="0.254" layer="1"/>
